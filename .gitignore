@@ -1,32 +1,47 @@
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
-# Binaries for programs and plugins
+# ── Binaries ───────────────────────────────────────────────
 *.exe
 *.exe~
 *.dll
 *.so
 *.dylib
-
-# Test binary, built with `go test -c`
-*.test
-
-# Code coverage profiles and other test artifacts
+bin/
 *.out
+
+# ── Test & Coverage ────────────────────────────────────────
+*.test
 coverage.*
 *.coverprofile
 profile.cov
 
-# Dependency directories (remove the comment below to include it)
+# ── Go ─────────────────────────────────────────────────────
 # vendor/
-
-# Go workspace file
 go.work
 go.work.sum
 
-# env file
-.env
+# ── Kubebuilder / controller-gen ───────────────────────────
+config/crd/bases/
+config/rbac/
+testbin/
 
-# Editor/IDE
-# .idea/
-# .vscode/
+# ── Env & Secrets ──────────────────────────────────────────
+.env
+*.env
+*.pem
+*.key
+credentials
+
+# ── AWS ────────────────────────────────────────────────────
+.aws/
+
+# ── IDE ────────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ── OS ─────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Helm ───────────────────────────────────────────────────
+charts/*.tgz
